@@ -1,0 +1,148 @@
+/* Estilos para la calculadora básica */
+:root {
+    --bg: #0f1724;
+    --panel: #111827;
+    --accent: #06b6d4;
+    --muted: #94a3b8;
+    --btn: #1f2937;
+    --btn-hover: #374151;
+    --danger: #ef4444;
+    --glass: rgba(255, 255, 255, 0.03);
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    background: linear-gradient(180deg, var(--bg), #081128);
+    color: #e6eef8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 420px
+}
+
+.calculator {
+    background: linear-gradient(180deg, var(--panel), #0b1220);
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+.display {
+    background: var(--glass);
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 12px
+}
+
+.history {
+    font-size: 0.85rem;
+    color: var(--muted);
+    min-height: 18px;
+    text-align: right
+}
+
+.output {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    color: var(--accent);
+    font-size: 2.2rem;
+    text-align: right;
+    padding: 6px 2px
+}
+
+.output:focus {
+    outline: none
+}
+
+.keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px
+}
+
+.btn {
+    background: var(--btn);
+    border-radius: 8px;
+    padding: 14px 10px;
+    border: 0;
+    color: #e6eef8;
+    font-size: 1.05rem;
+    cursor: pointer;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.35)
+}
+
+.btn:active {
+    transform: translateY(1px);
+    box-shadow: none
+}
+
+.btn:hover {
+    background: var(--btn-hover)
+}
+
+.btn.op {
+    background: #0ea5a1
+}
+
+.btn.op:hover {
+    filter: brightness(1.05)
+}
+
+.btn.equal {
+    grid-column: 4/5;
+    background: var(--accent);
+    color: #042024
+}
+
+.btn.func {
+    background: #334155
+}
+
+.btn.wide {
+    grid-column: 1/3
+}
+
+.hint {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 0.9rem;
+    text-align: center
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0
+}
+
+@media (max-width:420px) {
+    .output {
+        font-size: 1.6rem
+    }
+
+    .btn {
+        padding: 12px
+    }
+}

@@ -1,1 +1,53 @@
-.
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calculadora básica</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <main class="container">
+        <h1 class="visually-hidden">Calculadora básica</h1>
+
+        <section class="calculator" role="application" aria-label="Calculadora básica">
+            <div class="display">
+                <div id="history" class="history" aria-hidden="true"></div>
+                <input id="output" class="output" aria-label="Pantalla de la calculadora" readonly value="0">
+            </div>
+
+            <div class="keys">
+                <button class="btn func" data-action="clear" aria-label="Limpiar">C</button>
+                <button class="btn func" data-action="back" aria-label="Borrar">⌫</button>
+                <button class="btn func" data-action="percent" aria-label="Porcentaje">%</button>
+                <button class="btn op" data-action="/" aria-label="Dividir">÷</button>
+
+                <button class="btn" data-action="7">7</button>
+                <button class="btn" data-action="8">8</button>
+                <button class="btn" data-action="9">9</button>
+                <button class="btn op" data-action="*" aria-label="Multiplicar">×</button>
+
+                <button class="btn" data-action="4">4</button>
+                <button class="btn" data-action="5">5</button>
+                <button class="btn" data-action="6">6</button>
+                <button class="btn op" data-action="-" aria-label="Restar">−</button>
+
+                <button class="btn" data-action="1">1</button>
+                <button class="btn" data-action="2">2</button>
+                <button class="btn" data-action="3">3</button>
+                <button class="btn op" data-action="+" aria-label="Sumar">+</button>
+
+                <button class="btn wide" data-action="0">0</button>
+                <button class="btn" data-action=".">.</button>
+                <button class="btn equal" data-action="=" aria-label="Igual">=</button>
+            </div>
+        </section>
+        <p class="hint">Puedes usar el teclado: números, + - * / . Enter para =, Backspace para borrar.</p>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
