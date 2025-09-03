@@ -84,6 +84,7 @@
         else if (/^[+\-*/]$/.test(action)) inputOperator(action);
     }));
 
+
     // soporte teclado
     window.addEventListener('keydown', (e) => {
         if (e.key >= '0' && e.key <= '9') { inputDigit(e.key); e.preventDefault(); }
@@ -92,7 +93,12 @@
         else if (e.key === 'Enter' || e.key === '=') { evaluateExpression(); e.preventDefault(); }
         else if (['+', '-', '*', '/'].includes(e.key)) { inputOperator(e.key); e.preventDefault(); }
         else if (e.key.toLowerCase() === 'c') { clearAll(); }
+
+        // 👉 NUEVO:
+        else if (e.key === 'Escape') { clearAll(); e.preventDefault(); } // limpiar con Esc
+        else if (e.key === '%') { percent(); e.preventDefault(); }       // porcentaje con %
     });
+
 
     // inicializar
     render();
